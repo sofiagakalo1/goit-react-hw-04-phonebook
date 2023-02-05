@@ -10,6 +10,9 @@ const ContactsForm = ({ onSubmit }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    // console.log(event);
+    // console.log(name);
+    // console.log(number);
     onSubmit({name, number});
     setName('');
     setNumber('');
