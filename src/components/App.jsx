@@ -1,6 +1,7 @@
 // import { PureComponent } from 'react';
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
+// import { ToastMessage } from "react-toastr";
 
 import ContactsList from './ContactsList';
 import ContactsFilter from './ContactsFilter';
@@ -24,20 +25,23 @@ export const App = () => {
     [contacts]
   );
 
-  const isAlreadyExists = name => {
-    const normalizedName = name.toLowerCase();
-    const result = contacts.find(({ name }) => {
-      return name.toLowerCase() === normalizedName;
-    });
-    return Boolean(result);
-  };
-
   const addContact = ({ name, number }) => {
-    // console.log(this.state);
+    // console.log(name, number);
     if (isAlreadyExists(name)) {
       return alert(`${name} is already in your contacts!`);
     }
     setContacts([...contacts, { id: nanoid(), name, number }]);
+  };
+
+  const isAlreadyExists = searchName => {
+    // console.log(searchName);
+    if (
+      contacts.find(contact => {
+        return contact.name.toLowerCase() === searchName.toLowerCase();
+      })
+    ) {
+      return true;
+    }
   };
 
   const deleteContact = id => {
