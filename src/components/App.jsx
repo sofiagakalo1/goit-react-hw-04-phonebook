@@ -1,7 +1,5 @@
-// import { PureComponent } from 'react';
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
-// import { ToastMessage } from "react-toastr";
 
 import ContactsList from './ContactsList';
 import ContactsFilter from './ContactsFilter';
