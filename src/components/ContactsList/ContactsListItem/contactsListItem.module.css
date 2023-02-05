@@ -1,0 +1,31 @@
+.li {
+  display: flex;
+  flex-direction: row;
+  font-weight: normal;
+  font-size: 14px;
+  color: #2c3e50;
+  width: 100%;
+}
+
+.p {
+  margin-right: 10px;
+}
+
+.button {
+  margin-left: auto;
+  width: 60px;
+  background: #ee7ab2;
+  color: white;
+  border: 0 none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 3px 3px;
+  height: fit-content;
+}
+
+.button:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
+}
+.button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
+}
