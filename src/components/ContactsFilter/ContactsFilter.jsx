@@ -22,4 +22,8 @@ ContactsFilter.propTypes = {
   filter: PropTypes.string.isRequired,
 };
 
+ContactsFilter.defaultProps={
+  filter: '',
+}
+
 export default ContactsFilter;
