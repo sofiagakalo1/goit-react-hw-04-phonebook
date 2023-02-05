@@ -5,23 +5,18 @@ import ContactsList from './ContactsList';
 import ContactsFilter from './ContactsFilter';
 import ContactsForm from './ContactsForm';
 
-// import { getFromLocalStorage } from './utils/localStorage';
-// import { setToLocalStorage } from './utils/localStorage';
+import { getFromLocalStorage, setToLocalStorage } from '../utils/localStorage';
 
 import css from './app.module.css';
 
 export const App = () => {
   const [contacts, setContacts] = useState(() => {
-    const myContacts = localStorage.getItem('contacts');
-    const localStorageContacts = myContacts ? JSON.parse(myContacts) : [];
-    return localStorageContacts;
+    const myContacts = getFromLocalStorage('contacts');
+    return myContacts ?? [];
   });
   const [filter, setFilter] = useState('');
 
-  useEffect(
-    () => localStorage.setItem('contacts', JSON.stringify(contacts)),
-    [contacts]
-  );
+  useEffect(() => setToLocalStorage('contacts', contacts), [contacts]);
 
   const addContact = ({ name, number }) => {
     // console.log(name, number);
