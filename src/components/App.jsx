@@ -23,9 +23,17 @@ export const App = () => {
     if (isAlreadyExists(name)) {
       return alert(`${name} is already in your contacts!`);
     }
-    setContacts([...contacts, { id: nanoid(), name, number }]);
-  };
 
+    setContacts(prevContacts => {
+      const newContact = {
+        id: nanoid(),
+        name,
+        number,
+      };
+      return [...prevContacts, newContact];
+    });
+  };
+  
   const isAlreadyExists = searchName => {
     // console.log(searchName);
     if (
