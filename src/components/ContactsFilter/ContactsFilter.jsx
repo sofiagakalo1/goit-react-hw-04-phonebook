@@ -4,7 +4,7 @@ import css from './contactsFilter.module.css';
 const ContactsFilter = ({ onInputChange, filter }) => {
   return (
     <div className={css.filterBlock}>
-      <h4 className={css.h4}>Finddd contacts by name</h4>
+      <h4 className={css.h4}>Find contacts by name</h4>
       <input
         name="filter"
         onChange={onInputChange}

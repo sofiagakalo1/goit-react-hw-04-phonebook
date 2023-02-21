@@ -16,7 +16,7 @@ export const App = () => {
   // without custom hook
   // const [contacts, setContacts] = useState(() => {
   //   const myContacts = getFromLocalStorage('contacts');
-  //   return myContactss ?? [];
+  //   return myContacts ?? [];
   // });
   // useEffect(() => setToLocalStorage('contacts', contacts), [contacts]);
 
