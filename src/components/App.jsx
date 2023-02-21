@@ -16,14 +16,14 @@ export const App = () => {
   // without custom hook
   // const [contacts, setContacts] = useState(() => {
   //   const myContacts = getFromLocalStorage('contacts');
-  //   return myContacts ?? [];
+  //   return myContactss ?? [];
   // });
   // useEffect(() => setToLocalStorage('contacts', contacts), [contacts]);
 
   const addContact = ({ name, number }) => {
     // console.log(name, number);
     if (isAlreadyExists(name)) {
-      return alert(`${name} is already in your contacts!`);
+      return alert(`${name} is already in your contactss!`);
     }
 
     setContacts(prevContacts => {
